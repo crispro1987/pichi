@@ -1,0 +1,720 @@
+<header
+  class="relative h-[85vh] md:h-screen flex items-center justify-center overflow-hidden"
+>
+  <div class="absolute inset-0 z-0">
+    <img
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+      data-desktop-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
+      alt="Pichilemu Mar"
+      class="w-full h-full object-cover"
+      id="hero-img"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[#1E2221]/90 via-[#1E2221]/60 to-[#F7F5F0]"
+    ></div>
+  </div>
+  <div class="relative z-10 text-center max-w-4xl px-4 mx-auto pt-6">
+    <span
+      class="text-[#D4A373] font-medium tracking-widest text-xs uppercase bg-[#1E2221]/90 px-3 py-1.5 rounded-full inline-block mb-4 border border-white/10"
+    >
+      <i class="fa-solid fa-water mr-1.5"></i> Capital del Surf
+    </span>
+    <h1
+      class="text-3xl sm:text-6xl font-serif text-white font-bold leading-tight mb-4 px-2"
+    >
+      Donde el bosque nativo abraza el Pacífico
+    </h1>
+    <p
+      class="text-base sm:text-xl text-gray-200 font-light mb-8 max-w-xl mx-auto px-4"
+    >
+      Descubre refugios de diseño sustentable a pasos de Punta de Lobos.
+    </p>
+    <div
+      class="flex flex-col sm:flex-row justify-center items-center gap-3 w-full max-w-xs mx-auto sm:max-w-none"
+    >
+      <a
+        href="#cabanas"
+        class="w-full sm:w-auto bg-[#D4A373] text-[#1E2221] font-semibold py-3.5 px-8 rounded-xl shadow-md text-center active:scale-[0.98] transition-transform"
+      >
+        Ver Cabañas
+      </a>
+      <a
+        href="#entorno"
+        class="w-full sm:w-auto border border-white/40 text-white font-medium py-3.5 px-8 rounded-xl text-center bg-white/5"
+      >
+        Guía Turística
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- SECCIÓN CABAÑAS (SCROLL HORIZONTAL EN MÓVIL) -->
+<main
+  class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 py-12 md:py-24"
+  id="cabanas"
+>
+  <div class="text-center mb-8 px-4">
+    <h2 class="text-2xl sm:text-4xl font-serif font-bold text-[#1E2221] mb-2">
+      Nuestros Refugios
+    </h2>
+    <div class="w-12 h-1 bg-[#D4A373] mx-auto mb-3"></div>
+
+    <!-- Carrusel de Filtros Nativo para Móvil -->
+    <div
+      class="overflow-x-auto scrollbar-hide flex gap-2 py-3 px-2 -mx-4 sm:mx-0 justify-start sm:justify-center snap-x"
+    >
+      <button
+        class="filter-btn active bg-[#2B4C59] text-white px-5 py-2 rounded-full text-xs font-medium shrink-0 snap-center shadow-xs"
+        data-filter="all"
+      >
+        Todas
+      </button>
+      <button
+        class="filter-btn bg-white text-gray-600 px-5 py-2 rounded-full text-xs font-medium shrink-0 snap-center shadow-xs"
+        data-filter="parejas"
+      >
+        Parejas
+      </button>
+      <button
+        class="filter-btn bg-white text-gray-600 px-5 py-2 rounded-full text-xs font-medium shrink-0 snap-center shadow-xs"
+        data-filter="familias"
+      >
+        Familias
+      </button>
+      <button
+        class="filter-btn bg-white text-gray-600 px-5 py-2 rounded-full text-xs font-medium shrink-0 snap-center shadow-xs"
+        data-filter="eco"
+      >
+        Sustentables
+      </button>
+    </div>
+  </div>
+
+  <!-- Contenedor con Scroll Lateral en Móvil y Grilla en Desktop -->
+  <div
+    class="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 pb-6 px-4 sm:px-0 scroll-smooth snap-x snap-mandatory"
+    id="cabanas-grid"
+  >
+    <!-- CABAÑA 1 -->
+    <article
+      class="cabana-card bg-white rounded-xl overflow-hidden shadow-xs border border-gray-100 flex flex-col shrink-0 w-[88vw] md:w-auto snap-center"
+      data-category="parejas"
+    >
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <img
+          src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=500&q=80"
+          alt="Master Suite"
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute top-3 left-3 bg-[#2B4C59] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider"
+          >Vista al Mar</span
+        >
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-serif font-bold text-[#1E2221]">
+              Master Suite Lobos
+            </h3>
+            <div class="text-amber-500 text-xs">
+              <i class="fa-solid fa-star mr-1"></i>4.9
+            </div>
+          </div>
+          <p
+            class="text-gray-600 text-xs font-light mb-4 line-clamp-2 md:line-clamp-none"
+          >
+            Refugio premium frente a la mítica ola de Punta de Lobos. Cuenta con
+            tina de agua caliente privada bajo las estrellas.
+          </p>
+          <div
+            class="border-t border-b border-gray-100 py-3 mb-4 grid grid-cols-2 gap-y-2 text-[11px] text-gray-600"
+          >
+            <div>
+              <i class="fa-solid fa-user-group text-[#2B4C59] w-4"></i> 2
+              Huéspedes
+            </div>
+            <div>
+              <i class="fa-solid fa-hot-tub-person text-[#2B4C59] w-4"></i>
+              Hot Tub
+            </div>
+            <div>
+              <i class="fa-solid fa-fire text-[#2B4C59] w-4"></i> Bosca Leña
+            </div>
+            <div>
+              <i class="fa-solid fa-wifi text-[#2B4C59] w-4"></i> Starlink
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <div>
+            <span class="block text-[10px] text-gray-400 uppercase"
+              >Por noche</span
+            >
+            <span class="text-lg font-bold text-[#1E2221]">$140.000</span>
+          </div>
+          <button
+            class="bg-[#1E2221] text-white px-4 py-2.5 rounded-lg text-xs font-medium active:bg-[#2B4C59]"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- CABAÑA 2 (Estructura Móvil Idéntica) -->
+    <article
+      class="cabana-card bg-white rounded-xl overflow-hidden shadow-xs border border-gray-100 flex flex-col shrink-0 w-[88vw] md:w-auto snap-center"
+      data-category="familias"
+    >
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <img
+          src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=500&q=80"
+          alt="Familiar Infiernillo"
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute top-3 left-3 bg-[#6E7E75] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider"
+          >Bosque & Mar</span
+        >
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-serif font-bold text-[#1E2221]">
+              Familiar Infiernillo
+            </h3>
+            <div class="text-amber-500 text-xs">
+              <i class="fa-solid fa-star mr-1"></i>4.8
+            </div>
+          </div>
+          <p
+            class="text-gray-600 text-xs font-light mb-4 line-clamp-2 md:line-clamp-none"
+          >
+            Amplia cabaña de dos niveles rodeada de pinos piñoneros. Ideal para
+            familias amantes del surf de roca.
+          </p>
+          <div
+            class="border-t border-b border-gray-100 py-3 mb-4 grid grid-cols-2 gap-y-2 text-[11px] text-gray-600"
+          >
+            <div>
+              <i class="fa-solid fa-user-group text-[#2B4C59] w-4"></i> 5
+              Huéspedes
+            </div>
+            <div>
+              <i class="fa-solid fa-fire-burner text-[#2B4C59] w-4"></i>
+              Cocina Full
+            </div>
+            <div>
+              <i class="fa-solid fa-square-parking text-[#2B4C59] w-4"></i>
+              Parking
+            </div>
+            <div>
+              <i class="fa-solid fa-couch text-[#2B4C59] w-4"></i> Quincho
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <div>
+            <span class="block text-[10px] text-gray-400 uppercase"
+              >Por noche</span
+            >
+            <span class="text-lg font-bold text-[#1E2221]">$185.000</span>
+          </div>
+          <button
+            class="bg-[#1E2221] text-white px-4 py-2.5 rounded-lg text-xs font-medium active:bg-[#2B4C59]"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- CABAÑA 3 -->
+    <article
+      class="cabana-card bg-white rounded-xl overflow-hidden shadow-xs border border-gray-100 flex flex-col shrink-0 w-[88vw] md:w-auto snap-center"
+      data-category="eco"
+    >
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <img
+          src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=500&q=80"
+          alt="Eco Studio"
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute top-3 left-3 bg-[#D4A373] text-[#1E2221] text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider"
+          >Sustentable</span
+        >
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-serif font-bold text-[#1E2221]">
+              Eco Studio La Puntilla
+            </h3>
+            <div class="text-amber-500 text-xs">
+              <i class="fa-solid fa-star mr-1"></i>4.95
+            </div>
+          </div>
+          <p
+            class="text-gray-600 text-xs font-light mb-4 line-clamp-2 md:line-clamp-none"
+          >
+            Arquitectura bioclimática minimalista alimentada al 100% por energía
+            solar. Pasos directos al sector de escuelas de surf.
+          </p>
+          <div
+            class="border-t border-b border-gray-100 py-3 mb-4 grid grid-cols-2 gap-y-2 text-[11px] text-gray-600"
+          >
+            <div>
+              <i class="fa-solid fa-user-group text-[#2B4C59] w-4"></i> 2
+              Huéspedes
+            </div>
+            <div>
+              <i class="fa-solid fa-solar-panel text-[#2B4C59] w-4"></i>
+              Solar 100%
+            </div>
+            <div>
+              <i class="fa-solid fa-bicycle text-[#2B4C59] w-4"></i> Bicis
+              Libres
+            </div>
+            <div>
+              <i class="fa-solid fa-wifi text-[#2B4C59] w-4"></i> Starlink
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <div>
+            <span class="block text-[10px] text-gray-400 uppercase"
+              >Por noche</span
+            >
+            <span class="text-lg font-bold text-[#1E2221]">$110.000</span>
+          </div>
+          <button
+            class="bg-[#1E2221] text-white px-4 py-2.5 rounded-lg text-xs font-medium active:bg-[#2B4C59]"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- CABAÑA 4 -->
+    <article
+      class="cabana-card bg-white rounded-xl overflow-hidden shadow-xs border border-gray-100 flex flex-col shrink-0 w-[88vw] md:w-auto snap-center"
+      data-category="parejas"
+    >
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <img
+          src="https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=500&q=80"
+          alt="Loft Terrazas"
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute top-3 left-3 bg-[#2B4C59] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider"
+          >Alta Vista</span
+        >
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-serif font-bold text-[#1E2221]">
+              Loft Terrazas Cahuil
+            </h3>
+            <div class="text-amber-500 text-xs">
+              <i class="fa-solid fa-star mr-1"></i>4.75
+            </div>
+          </div>
+          <p
+            class="text-gray-600 text-xs font-light mb-4 line-clamp-2 md:line-clamp-none"
+          >
+            Ubicado en los faldeos altos de Cahuil, ofrece ventanales
+            panorámicos hacia el encuentro del humedal y el océano.
+          </p>
+          <div
+            class="border-t border-b border-gray-100 py-3 mb-4 grid grid-cols-2 gap-y-2 text-[11px] text-gray-600"
+          >
+            <div>
+              <i class="fa-solid fa-user-group text-[#2B4C59] w-4"></i> 2
+              Huéspedes
+            </div>
+            <div>
+              <i class="fa-solid fa-cloud-sun text-[#2B4C59] w-4"></i>
+              Terraza
+            </div>
+            <div>
+              <i class="fa-solid fa-martini-glass text-[#2B4C59] w-4"></i>
+              Minibar
+            </div>
+            <div>
+              <i class="fa-solid fa-tv text-[#2B4C59] w-4"></i> Smart TV
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <div>
+            <span class="block text-[10px] text-gray-400 uppercase"
+              >Por noche</span
+            >
+            <span class="text-lg font-bold text-[#1E2221]">$125.000</span>
+          </div>
+          <button
+            class="bg-[#1E2221] text-white px-4 py-2.5 rounded-lg text-xs font-medium active:bg-[#2B4C59]"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- CABAÑA 5 -->
+    <article
+      class="cabana-card bg-white rounded-xl overflow-hidden shadow-xs border border-gray-100 flex flex-col shrink-0 w-[88vw] md:w-auto snap-center"
+      data-category="familias"
+    >
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <img
+          src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=500&q=80"
+          alt="Villa"
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute top-3 left-3 bg-[#1E2221] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider"
+          >Premium Lodge</span
+        >
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-serif font-bold text-[#1E2221]">
+              Villa Grande Lobos
+            </h3>
+            <div class="text-amber-500 text-xs">
+              <i class="fa-solid fa-star mr-1"></i>5.0
+            </div>
+          </div>
+          <p
+            class="text-gray-600 text-xs font-light mb-4 line-clamp-2 md:line-clamp-none"
+          >
+            Nuestra propiedad insignia. Capacidad optimizada para delegaciones
+            deportivas o familias extensas.
+          </p>
+          <div
+            class="border-t border-b border-gray-100 py-3 mb-4 grid grid-cols-2 gap-y-2 text-[11px] text-gray-600"
+          >
+            <div>
+              <i class="fa-solid fa-user-group text-[#2B4C59] w-4"></i> 8
+              Huéspedes
+            </div>
+            <div>
+              <i class="fa-solid fa-kitchen-set text-[#2B4C59] w-4"></i>
+              Isla Cocina
+            </div>
+            <div>
+              <i class="fa-solid fa-hot-tub-person text-[#2B4C59] w-4"></i>
+              Spa Jacuzzi
+            </div>
+            <div>
+              <i class="fa-solid fa-shield text-[#2B4C59] w-4"></i> Seguro
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <div>
+            <span class="block text-[10px] text-gray-400 uppercase"
+              >Por noche</span
+            >
+            <span class="text-lg font-bold text-[#1E2221]">$290.000</span>
+          </div>
+          <button
+            class="bg-[#1E2221] text-white px-4 py-2.5 rounded-lg text-xs font-medium active:bg-[#2B4C59]"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- CABAÑA 6 -->
+    <article
+      class="cabana-card bg-white rounded-xl overflow-hidden shadow-xs border border-gray-100 flex flex-col shrink-0 w-[88vw] md:w-auto snap-center"
+      data-category="eco"
+    >
+      <div class="relative overflow-hidden aspect-[16/10]">
+        <img
+          src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=500&q=80"
+          alt="Eco Domo"
+          class="w-full h-full object-cover"
+        />
+        <span
+          class="absolute top-3 left-3 bg-[#D4A373] text-[#1E2221] text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider"
+          >Glamping</span
+        >
+      </div>
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-lg font-serif font-bold text-[#1E2221]">
+              Eco Domo Mirador
+            </h3>
+            <div class="text-amber-500 text-xs">
+              <i class="fa-solid fa-star mr-1"></i>4.90
+            </div>
+          </div>
+          <p
+            class="text-gray-600 text-xs font-light mb-4 line-clamp-2 md:line-clamp-none"
+          >
+            Geometría rústica en maderas locales. Ventanal cenital para
+            observación del prístino cielo estrellado de la costa.
+          </p>
+          <div
+            class="border-t border-b border-gray-100 py-3 mb-4 grid grid-cols-2 gap-y-2 text-[11px] text-gray-600"
+          >
+            <div>
+              <i class="fa-solid fa-user-group text-[#2B4C59] w-4"></i> 2
+              Huéspedes
+            </div>
+            <div>
+              <i class="fa-solid fa-compass text-[#2B4C59] w-4"></i>
+              Inmersión
+            </div>
+            <div>
+              <i class="fa-solid fa-shower text-[#2B4C59] w-4"></i>
+              Compostable
+            </div>
+            <div>
+              <i class="fa-solid fa-bolt-lightning text-[#2B4C59] w-4"></i>
+              Carga Solar
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <div>
+            <span class="block text-[10px] text-gray-400 uppercase"
+              >Por noche</span
+            >
+            <span class="text-lg font-bold text-[#1E2221]">$95.000</span>
+          </div>
+          <button
+            class="bg-[#1E2221] text-white px-4 py-2.5 rounded-lg text-xs font-medium active:bg-[#2B4C59]"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<!-- ENTORNO LOCAL (SCROLL LATERAL EN MÓVIL) -->
+<section
+  class="bg-[#1E2221] text-white py-16 md:py-24 shadow-inner"
+  id="entorno"
+>
+  <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 px-4">
+      <span
+        class="text-[#D4A373] uppercase tracking-widest text-[10px] font-semibold"
+        >Guía Local</span
+      >
+      <h2 class="text-2xl sm:text-4xl font-serif font-bold mt-1">El Entorno</h2>
+      <div class="w-12 h-1 bg-[#D4A373] mx-auto mt-2"></div>
+    </div>
+
+    <div
+      class="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 pb-6 px-4 sm:px-0 snap-x snap-mandatory scrollbar-hide"
+    >
+      <!-- Atractivo 1 -->
+      <div
+        class="bg-[#2B4C59]/20 rounded-xl overflow-hidden border border-white/5 flex-shrink-0 w-[78vw] md:w-auto snap-center"
+      >
+        <div class="h-40 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400&q=80"
+            alt="Punta de Lobos"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="text-base font-serif font-bold text-[#D4A373] mb-1">
+            Los Morros
+          </h3>
+          <p
+            class="text-gray-400 text-xs font-light leading-relaxed line-clamp-3"
+          >
+            Santuario de la Naturaleza y epicentro del surf de olas grandes del
+            Pacífico Sur.
+          </p>
+        </div>
+      </div>
+      <!-- Atractivo 2 -->
+      <div
+        class="bg-[#2B4C59]/20 rounded-xl overflow-hidden border border-white/5 flex-shrink-0 w-[78vw] md:w-auto snap-center"
+      >
+        <div class="h-40 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&q=80"
+            alt="Laguna Cahuil"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="text-base font-serif font-bold text-[#D4A373] mb-1">
+            Humedal de Cahuil
+          </h3>
+          <p
+            class="text-gray-400 text-xs font-light leading-relaxed line-clamp-3"
+          >
+            Avistamiento de cisnes de cuello negro y paseos en botes de madera
+            tradicionales.
+          </p>
+        </div>
+      </div>
+      <!-- Atractivo 3 -->
+      <div
+        class="bg-[#2B4C59]/20 rounded-xl overflow-hidden border border-white/5 flex-shrink-0 w-[78vw] md:w-auto snap-center"
+      >
+        <div class="h-40 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80"
+            alt="Salinas"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="text-base font-serif font-bold text-[#D4A373] mb-1">
+            Salinas Ancestrales
+          </h3>
+          <p
+            class="text-gray-400 text-xs font-light leading-relaxed line-clamp-3"
+          >
+            Patrimonio vivo de extracción artesanal con procesos e historia de
+            origen prehispánico.
+          </p>
+        </div>
+      </div>
+      <!-- Atractivo 4 -->
+      <div
+        class="bg-[#2B4C59]/20 rounded-xl overflow-hidden border border-white/5 flex-shrink-0 w-[78vw] md:w-auto snap-center"
+      >
+        <div class="h-40 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80"
+            alt="Bosque"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="text-base font-serif font-bold text-[#D4A373] mb-1">
+            Bosque Centenario
+          </h3>
+          <p
+            class="text-gray-400 text-xs font-light leading-relaxed line-clamp-3"
+          >
+            Senderos urbanos patrimoniales trazados históricamente por don
+            Agustín Ross.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN EVENTOS (APILADO MÓVIL SEGURO) -->
+<section
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24"
+  id="noticias"
+>
+  <div class="mb-10 text-center md:text-left">
+    <span
+      class="text-[#2B4C59] uppercase tracking-widest text-[10px] font-semibold block"
+      >Agenda Local</span
+    >
+    <h2 class="text-2xl sm:text-4xl font-serif font-bold text-[#1E2221] mt-1">
+      Eventos en la Comuna
+    </h2>
+  </div>
+
+  <div class="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
+    <!-- Evento 1 -->
+    <article
+      class="bg-white rounded-xl shadow-xs overflow-hidden border border-gray-100 p-5 flex flex-col justify-between"
+    >
+      <div>
+        <div class="flex items-center gap-2 text-[11px] text-gray-400 mb-2">
+          <span
+            class="bg-[#F7F5F0] text-[#2B4C59] px-2 py-0.5 rounded font-medium"
+            >Octubre</span
+          >
+          <span>• Deporte</span>
+        </div>
+        <h3 class="text-base font-serif font-bold text-[#1E2221] mb-2">
+          WSL Pichilemu Pro
+        </h3>
+        <p class="text-gray-600 text-xs font-light leading-relaxed">
+          Surf mundial femenino y junior clasificatorio directo en la icónica
+          punta izquierda.
+        </p>
+      </div>
+      <div
+        class="mt-4 pt-3 border-t border-gray-50 text-[11px] text-gray-500 flex justify-between"
+      >
+        <span>Punta de Lobos</span>
+        <span class="text-[#D4A373] font-medium">Acceso Gratis</span>
+      </div>
+    </article>
+    <!-- Evento 2 -->
+    <article
+      class="bg-white rounded-xl shadow-xs overflow-hidden border border-gray-100 p-5 flex flex-col justify-between"
+    >
+      <div>
+        <div class="flex items-center gap-2 text-[11px] text-gray-400 mb-2">
+          <span
+            class="bg-[#F7F5F0] text-[#2B4C59] px-2 py-0.5 rounded font-medium"
+            >Noviembre</span
+          >
+          <span>• Cultura</span>
+        </div>
+        <h3 class="text-base font-serif font-bold text-[#1E2221] mb-2">
+          Feria de la Sal Marina
+        </h3>
+        <p class="text-gray-600 text-xs font-light leading-relaxed">
+          Gastronomía local, catas de sal de mar y música de raíz folclórica
+          tradicional.
+        </p>
+      </div>
+      <div
+        class="mt-4 pt-3 border-t border-gray-50 text-[11px] text-gray-500 flex justify-between"
+      >
+        <span>Sector Cahuil</span>
+        <span class="text-[#D4A373] font-medium">Familiar</span>
+      </div>
+    </article>
+    <!-- Evento 3 -->
+    <article
+      class="bg-white rounded-xl shadow-xs overflow-hidden border border-gray-100 p-5 flex flex-col justify-between"
+    >
+      <div>
+        <div class="flex items-center gap-2 text-[11px] text-gray-400 mb-2">
+          <span
+            class="bg-[#F7F5F0] text-[#2B4C59] px-2 py-0.5 rounded font-medium"
+            >Diciembre</span
+          >
+          <span>• Ecología</span>
+        </div>
+        <h3 class="text-base font-serif font-bold text-[#1E2221] mb-2">
+          Limpieza Comunitaria
+        </h3>
+        <p class="text-gray-600 text-xs font-light leading-relaxed">
+          Iniciativa ecologista voluntaria para proteger la biodiversidad
+          costera provincial.
+        </p>
+      </div>
+      <div
+        class="mt-4 pt-3 border-t border-gray-50 text-[11px] text-gray-500 flex justify-between"
+      >
+        <span>Playa Infiernillo</span>
+        <span class="text-[#2B4C59] font-medium">Voluntariado</span>
+      </div>
+    </article>
+  </div>
+</section>

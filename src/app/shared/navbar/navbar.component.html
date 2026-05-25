@@ -1,0 +1,103 @@
+<nav
+  [class.nav-scrolled]="isScrolled"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#1E2221] md:bg-transparent py-3 md:py-5"
+  id="main-nav"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14 md:h-16">
+      <div class="flex-shrink-0">
+        <a
+          href="#"
+          class="text-xl md:text-2xl font-serif tracking-wider font-bold text-white"
+        >
+          LOBOS<span class="text-[#D4A373]">LODGE</span>
+        </a>
+      </div>
+      <!-- Menú Desktop -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a
+          href="#"
+          class="text-white hover:text-[#D4A373] px-3 py-2 text-sm font-medium transition-colors"
+          >Inicio</a
+        >
+        <a
+          href="#cabanas"
+          class="text-white hover:text-[#D4A373] px-3 py-2 text-sm font-medium transition-colors"
+          >Cabañas</a
+        >
+        <a
+          href="#entorno"
+          class="text-white hover:text-[#D4A373] px-3 py-2 text-sm font-medium transition-colors"
+          >Entorno</a
+        >
+        <a
+          href="#noticias"
+          class="text-white hover:text-[#D4A373] px-3 py-2 text-sm font-medium transition-colors"
+          >Eventos</a
+        >
+        <a
+          href="#cabanas"
+          class="bg-[#2B4C59] text-white hover:bg-[#1A333D] px-5 py-2.5 rounded-md text-sm font-medium transition-all shadow-md"
+          >Area Anfitriones</a
+        >
+      </div>
+      <!-- Botón Móvil con área táctil mejorada (mínimo 44px) -->
+      <div class="md:hidden flex items-center">
+        <button
+          (click)="toggleMobileMenu()"
+          type="button"
+          id="mobile-menu-btn"
+          class="text-white hover:text-[#D4A373] w-11 h-11 flex items-center justify-center rounded-md focus:outline-none bg-white/5"
+          aria-label="Abrir menú"
+        >
+          <i
+            [class]="mobileMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú Móvil en Pantalla Completa (Full Screen Overlay) -->
+  <div
+    [class.hidden]="!mobileMenuOpen"
+    class="hidden fixed inset-0 top-14 bg-[#1E2221] z-40 flex flex-col justify-between p-6 overflow-y-auto md:hidden"
+    id="mobile-menu"
+  >
+    <div class="space-y-4 pt-4">
+      <a
+        (click)="closeMobileMenu()"
+        href="#"
+        class="mobile-nav-link block text-2xl font-serif text-white py-3 border-b border-white/5"
+        >Inicio</a
+      >
+      <a
+        (click)="closeMobileMenu()"
+        href="#cabanas"
+        class="mobile-nav-link block text-2xl font-serif text-white py-3 border-b border-white/5"
+        >Cabañas de Diseño</a
+      >
+      <a
+        (click)="closeMobileMenu()"
+        href="#entorno"
+        class="mobile-nav-link block text-2xl font-serif text-white py-3 border-b border-white/5"
+        >Entorno Local</a
+      >
+      <a
+        (click)="closeMobileMenu()"
+        href="#noticias"
+        class="mobile-nav-link block text-2xl font-serif text-white py-3 border-b border-white/5"
+        >Eventos y Agenda</a
+      >
+    </div>
+    <div class="mb-14">
+      <a
+        (click)="closeMobileMenu()"
+        href="#cabanas"
+        class="mobile-nav-link block bg-[#D4A373] text-[#1E2221] text-center font-bold py-4 rounded-xl text-lg shadow-lg"
+      >
+        <i class="fa-solid fa-calendar-days mr-2"></i>Area Anfitriones
+      </a>
+    </div>
+  </div>
+</nav>

@@ -1,4 +1,3 @@
-@import "tailwindcss";
 
 html {
     scroll-behavior: smooth;
@@ -8,6 +7,7 @@ html {
 body {
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden; /* Seguridad crítica contra scroll horizontal accidental */
+    background-color: #F7F5F0; 
 }
 
 h1, h2, h3, h4, .font-serif {
