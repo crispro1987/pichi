@@ -1,0 +1,471 @@
+<div
+  class="w-full bg-gradient-to-b from-[#2B4C59] to-transparent bg-[length:100%_200px] bg-no-repeat"
+>
+  <main
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 md:pb-12 pt-24 md:pt-32"
+  >
+    <div
+      class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6"
+    >
+      <div class="text-xs text-gray-500">
+        <a href="index.html" class="hover:text-[#2B4C59]">Inicio</a> /
+        <a href="index.html#cabanas" class="hover:text-[#2B4C59]">Cabañas</a>
+        /
+        <span class="text-[#1E2221] font-medium">Master Suite Lobos</span>
+      </div>
+      <div
+        class="inline-flex items-center gap-2 bg-[#2B4C59]/10 border border-[#2B4C59]/30 text-[#2B4C59] px-3 py-1.5 rounded-lg text-xs font-medium self-start sm:self-auto"
+      >
+        <i class="fa-solid fa-shield-check text-base"></i>
+        <span>Alojamiento Verificado por el Equipo Lobos Lodge</span>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h1 class="text-3xl md:text-5xl font-serif font-bold text-[#1E2221] mb-2">
+        Master Suite Lobos
+      </h1>
+      <p class="text-gray-600 flex items-center gap-4 text-sm">
+        <span
+          ><i class="fa-solid fa-location-dot text-[#D4A373] mr-1"></i> Punta de
+          Lobos, Pichilemu</span
+        >
+        <span class="text-amber-500"
+          ><i class="fa-solid fa-star mr-1"></i>4.9 (48 reseñas)</span
+        >
+      </p>
+    </div>
+
+    <section
+      class="relative h-[45vh] md:h-[65vh] rounded-2xl overflow-hidden shadow-lg bg-[#1E2221] mb-12 group"
+    >
+      <div
+        class="absolute inset-0 flex transition-transform duration-500 ease-out"
+        [style.transform]="sliderTransform()"
+      >
+        @for (slide of slides; track $index) {
+          <div class="w-full h-full shrink-0">
+            <img
+              [src]="slide.src"
+              [alt]="slide.alt"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        }
+      </div>
+
+      <button
+        (click)="prevSlide()"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-[#1E2221] flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+        aria-label="Anterior"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <button
+        (click)="nextSlide()"
+        class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-[#1E2221] flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100"
+        aria-label="Siguiente"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <div
+        class="absolute bottom-4 right-4 bg-[#1E2221]/80 backdrop-blur-xs text-white text-xs px-3 py-1.5 rounded-md font-medium"
+      >
+        <i class="fa-solid fa-camera mr-1"></i>
+        <span>{{ currentIndex() + 1 }}/{{ slides.length }}</span>
+      </div>
+    </section>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start mb-16"
+    >
+      <div class="lg:col-span-2 space-y-10">
+        <div>
+          <h2
+            class="text-xl md:text-2xl font-serif font-bold text-[#1E2221] mb-4"
+          >
+            Sobre el Refugio
+          </h2>
+          <div class="w-12 h-0.5 bg-[#D4A373] mb-4"></div>
+          <p class="text-gray-600 leading-relaxed font-light mb-4">
+            Nuestra Master Suite es un espacio de arquitectura bioclimática
+            diseñado exclusivamente para ofrecer una experiencia de desconexión
+            radical frente al Océano Pacífico. Ubicada en lo alto del
+            acantilado, permite presenciar las mejores puestas de sol de la
+            Región de O'Higgins desde su cama king size.
+          </p>
+          <p class="text-gray-600 leading-relaxed font-light">
+            Construida íntegrame con maderas locales tratadas e iluminación de
+            bajo impacto, incluye un exclusivo sistema de calefacción eficiente
+            a leña (Bosca) y acceso directo a una tina de agua caliente (Hot
+            Tub) privada de uso ilimitado.
+          </p>
+        </div>
+
+        <div>
+          <h2
+            class="text-xl md:text-2xl font-serif font-bold text-[#1E2221] mb-4"
+          >
+            Amenidades Incluidas
+          </h2>
+          <div class="w-12 h-0.5 bg-[#D4A373] mb-6"></div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div
+              class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-100"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+              >
+                <i class="fa-solid fa-hot-tub-person"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700"
+                >Hot Tub Privado</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-100"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+              >
+                <i class="fa-solid fa-wifi"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700"
+                >Internet Starlink</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-100"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+              >
+                <i class="fa-solid fa-fire"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700"
+                >Bosca a Leña</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-100"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+              >
+                <i class="fa-solid fa-blender"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700"
+                >Cocina Equipada</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-100"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+              >
+                <i class="fa-solid fa-square-parking"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700"
+                >Parking Privado</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-100"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+              >
+                <i class="fa-solid fa-paw"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700"
+                >Pet Friendly</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-xs">
+          <h3
+            class="text-base font-serif font-bold text-[#1E2221] mb-4 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-calendar-days text-[#D4A373]"></i> Precios por
+            Temporada
+          </h3>
+          <div class="space-y-3">
+            <div
+              class="flex justify-between items-center py-2 border-b border-gray-50 text-xs"
+            >
+              <div>
+                <span class="block font-medium text-gray-700"
+                  >Temporada Baja</span
+                >
+                <span class="text-gray-400 font-light">Mayo a Agosto</span>
+              </div>
+              <span class="text-sm font-bold text-[#1E2221]"
+                >$140.000
+                <span class="text-[10px] text-gray-400 font-normal"
+                  >/noche</span
+                ></span
+              >
+            </div>
+            <div
+              class="flex justify-between items-center py-2 border-b border-gray-50 text-xs"
+            >
+              <div>
+                <span class="block font-medium text-gray-700"
+                  >Temporada Media</span
+                >
+                <span class="text-gray-400 font-light"
+                  >Mar, Abr, Sep, Oct, Nov</span
+                >
+              </div>
+              <span class="text-sm font-bold text-[#1E2221]"
+                >$165.000
+                <span class="text-[10px] text-gray-400 font-normal"
+                  >/noche</span
+                ></span
+              >
+            </div>
+            <div class="flex justify-between items-center py-2 text-xs">
+              <div>
+                <span class="block font-medium text-[#2B4C59] font-semibold"
+                  >Temporada Alta (Verano/Feriados)</span
+                >
+                <span class="text-gray-400 font-light"
+                  >Dic a Feb / Fiestas Patrias</span
+                >
+              </div>
+              <span class="text-sm font-bold text-[#2B4C59]"
+                >$195.000
+                <span class="text-[10px] text-gray-400 font-normal"
+                  >/noche</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-xs">
+          <h3
+            class="text-xs font-semibold uppercase text-gray-400 tracking-wider mb-3"
+          >
+            Ubicación exacta
+          </h3>
+          <div
+            class="w-full h-44 rounded-xl bg-gray-200 overflow-hidden relative border border-gray-100"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=400&q=80&quot;);
+              "
+            >
+              <div class="absolute inset-0 bg-[#2B4C59]/10"></div>
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+              >
+                <i
+                  class="fa-solid fa-location-dot text-3xl text-red-500 drop-shadow-md animate-bounce"
+                ></i>
+                <span
+                  class="bg-[#1E2221] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-md whitespace-nowrap mt-1"
+                  >Lobos Lodge</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="border-t border-gray-200/60 pt-12">
+      <div class="mb-8">
+        <h2
+          class="text-2xl md:text-3xl font-serif font-bold text-[#1E2221] mb-2"
+        >
+          Variantes de Distribución & Disponibilidad
+        </h2>
+        <p class="text-gray-500 text-sm font-light">
+          Consulta el estado actual de nuestras unidades para tus fechas
+          seleccionadas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs flex flex-col justify-between group transition-all hover:shadow-md"
+        >
+          <div>
+            <div class="relative h-48 bg-gray-100 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80"
+                alt="Habitación Pareja"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span
+                class="absolute top-3 left-3 bg-emerald-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-sm"
+              >
+                <i class="fa-solid fa-circle-check mr-1"></i> Disponible
+              </span>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-serif font-bold text-[#1E2221] text-base">
+                  Estudio Single Standard
+                </h3>
+                <span class="text-xs font-bold text-[#2B4C59]"
+                  >$110.000
+                  <span class="text-[9px] text-gray-400 font-normal"
+                    >/noche</span
+                  ></span
+                >
+              </div>
+              <div
+                class="flex flex-wrap gap-y-2 gap-x-4 text-[11px] text-gray-500 mt-3 pt-3 border-t border-gray-50"
+              >
+                <span
+                  ><i class="fa-solid fa-user text-[#2B4C59] w-3.5"></i> Máx 2
+                  Pers.</span
+                >
+                <span
+                  ><i class="fa-solid fa-wifi text-[#2B4C59] w-3.5"></i> WiFi
+                  Gratis</span
+                >
+                <span
+                  ><i class="fa-solid fa-paw text-[#2B4C59] w-3.5"></i> Mascotas
+                  OK</span
+                >
+                <span
+                  ><i class="fa-solid fa-bed text-[#2B4C59] w-3.5"></i> 1 Cama
+                  King</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button
+              class="w-full bg-[#1E2221] text-white hover:bg-[#2B4C59] text-xs font-semibold py-3 rounded-xl transition-all shadow-xs"
+            >
+              Seleccionar Habitación
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs flex flex-col justify-between opacity-85 relative"
+        >
+          <div
+            class="absolute inset-0 bg-white/10 pointer-events-none z-10"
+          ></div>
+          <div>
+            <div class="relative h-48 bg-gray-100 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80"
+                alt="Habitación Triple"
+                class="w-full h-full object-cover filter grayscale-25"
+              />
+              <span
+                class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-sm"
+              >
+                <i class="fa-solid fa-circle-xmark mr-1"></i> Ocupada /
+                Reservada
+              </span>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3
+                  class="font-serif font-bold text-gray-400 text-base line-through"
+                >
+                  Dúplex Suite Familiar
+                </h3>
+                <span class="text-xs font-bold text-gray-400">$155.000</span>
+              </div>
+              <div
+                class="flex flex-wrap gap-y-2 gap-x-4 text-[11px] text-gray-400 mt-3 pt-3 border-t border-gray-50"
+              >
+                <span
+                  ><i class="fa-solid fa-user w-3.5"></i> Hasta 4 Pers.</span
+                >
+                <span><i class="fa-solid fa-wifi w-3.5"></i> WiFi Gratis</span>
+                <span><i class="fa-solid fa-ban w-3.5"></i> No Mascotas</span>
+                <span><i class="fa-solid fa-bed w-3.5"></i> 3 Camas</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0 z-20">
+            <button
+              disabled
+              class="w-full bg-gray-200 text-gray-400 text-xs font-semibold py-3 rounded-xl cursor-not-allowed"
+            >
+              No Disponible en estas Fechas
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xs flex flex-col justify-between group transition-all hover:shadow-md"
+        >
+          <div>
+            <div class="relative h-48 bg-gray-100 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=400&q=80"
+                alt="Cabaña Familiar"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span
+                class="absolute top-3 left-3 bg-emerald-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider uppercase shadow-sm"
+              >
+                <i class="fa-solid fa-circle-check mr-1"></i> Disponible
+              </span>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-serif font-bold text-[#1E2221] text-base">
+                  Villa Glamping Premium
+                </h3>
+                <span class="text-xs font-bold text-[#2B4C59]"
+                  >$185.000
+                  <span class="text-[9px] text-gray-400 font-normal"
+                    >/noche</span
+                  ></span
+                >
+              </div>
+              <div
+                class="flex flex-wrap gap-y-2 gap-x-4 text-[11px] text-gray-500 mt-3 pt-3 border-t border-gray-50"
+              >
+                <span
+                  ><i class="fa-solid fa-user text-[#2B4C59] w-3.5"></i> Máx 6
+                  Pers.</span
+                >
+                <span
+                  ><i class="fa-solid fa-wifi text-[#2B4C59] w-3.5"></i>
+                  Starlink Premium</span
+                >
+                <span
+                  ><i class="fa-solid fa-paw text-[#2B4C59] w-3.5"></i> Mascotas
+                  OK</span
+                >
+                <span
+                  ><i class="fa-solid fa-bed text-[#2B4C59] w-3.5"></i> 4 Camas
+                  (1 King)</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <button
+              class="w-full bg-[#1E2221] text-white hover:bg-[#2B4C59] text-xs font-semibold py-3 rounded-xl transition-all shadow-xs"
+            >
+              Seleccionar Habitación
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
