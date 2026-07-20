@@ -1,0 +1,133 @@
+<div
+  class="w-full bg-gradient-to-b from-[#2B4C59] to-transparent bg-[length:100%_200px] bg-no-repeat"
+>
+  <main
+    class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-12"
+  >
+    <div
+      class="max-w-md w-full space-y-6 bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm"
+    >
+      <div class="text-center">
+        <span
+          class="text-[10px] uppercase font-bold tracking-wider text-[#2B4C59] bg-[#2B4C59]/10 px-2.5 py-1 rounded"
+          >Panel de Control</span
+        >
+        <h1 class="text-2xl font-serif font-bold text-[#1E2221] mt-4 mb-1">
+          Acceso Anfitriones
+        </h1>
+        <p class="text-xs text-gray-400 font-light">
+          Ingresa tus credenciales para gestionar tus cabañas y reservas.
+        </p>
+      </div>
+
+      <form class="space-y-4" action="#" method="POST">
+        <div>
+          <label
+            for="email"
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Correo Electrónico</label
+          >
+          <div class="relative">
+            <span
+              class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 text-xs"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="w-full text-xs font-light pl-9 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30 text-[#2D3130]"
+              placeholder="ejemplo@dominio.com"
+            />
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-1">
+            <label
+              for="password"
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider"
+              >Contraseña</label
+            >
+            <a
+              href="#"
+              class="text-[10px] font-medium text-[#D4A373] hover:underline"
+              >¿La olvidaste?</a
+            >
+          </div>
+          <div class="relative">
+            <span
+              class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 text-xs"
+            >
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              class="w-full text-xs font-light pl-9 pr-10 py-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30 text-[#2D3130]"
+              placeholder="••••••••"
+            />
+            <button
+              type="button"
+              id="toggle-password"
+              class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-[#2B4C59] text-xs cursor-pointer"
+            >
+              <i class="fa-solid fa-eye" id="eye-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            id="remember-me"
+            name="remember-me"
+            type="checkbox"
+            class="accent-[#2B4C59] h-4 w-4 rounded"
+          />
+          <label
+            for="remember-me"
+            class="ml-2 block text-xs text-gray-500 font-light"
+          >
+            Recordar mi sesión en este dispositivo
+          </label>
+        </div>
+
+        <div class="pt-2">
+          <button
+            type="submit"
+            class="w-full bg-[#2B4C59] text-white font-semibold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-md hover:bg-[#1A333D] transition-all text-center cursor-pointer"
+          >
+            Iniciar Sesión
+            <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+          </button>
+        </div>
+      </form>
+
+      <div class="relative flex py-2 items-center">
+        <div class="flex-grow border-t border-gray-100"></div>
+        <span
+          class="flex-shrink mx-3 text-[10px] text-gray-300 uppercase tracking-wider font-light"
+          >¿Eres nuevo?</span
+        >
+        <div class="flex-grow border-t border-gray-100"></div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-xs text-gray-500 font-light">
+          ¿Aún no tienes una cuenta de anfitrión?
+          <a
+            href="registro-arrendador.html"
+            class="block sm:inline font-semibold text-[#2B4C59] hover:underline mt-1 sm:mt-0"
+            >Regístrate aquí</a
+          >
+        </p>
+      </div>
+    </div>
+  </main>
+</div>

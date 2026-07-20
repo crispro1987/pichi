@@ -1,1 +1,618 @@
-<p>anfitrion works!</p>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div
+    class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8"
+  >
+    <div>
+      <h1 class="text-2xl font-serif font-bold text-[#1E2221]">
+        Resumen del Negocio
+      </h1>
+      <p class="text-xs text-gray-400 font-light">
+        Monitorea ocupación, ingresos y gestiona tus alojamientos.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      <button
+        type="button"
+        onclick="openReservationModal()"
+        class="bg-[#2B4C59] text-white text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-[#1A333D] transition-all shadow-xs cursor-pointer"
+      >
+        <i class="fa-solid fa-calendar-plus mr-1.5"></i> Reserva Manual /
+        Bloqueo
+      </button>
+      <button
+        type="button"
+        class="bg-white text-[#1E2221] border border-gray-200 text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-50 transition-all cursor-pointer"
+      >
+        <i class="fa-solid fa-house-medical text-[#6E7E75] mr-1.5"></i>
+        Agregar Cabaña
+      </button>
+      <button
+        type="button"
+        class="bg-white text-[#1E2221] border border-gray-200 text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-50 transition-all cursor-pointer"
+      >
+        <i class="fa-solid fa-users text-[#D4A373] mr-1.5"></i> Ver Pasajeros
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+    <div
+      class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs flex items-center justify-between"
+    >
+      <div>
+        <span
+          class="block text-[10px] uppercase font-semibold text-gray-400 tracking-wider"
+          >Cabañas</span
+        >
+        <span class="text-xl font-serif font-bold text-[#1E2221] mt-0.5 block"
+          >12</span
+        >
+      </div>
+      <div
+        class="w-9 h-9 rounded-lg bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59]"
+      >
+        <i class="fa-solid fa-door-open text-base"></i>
+      </div>
+    </div>
+    <div
+      class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs flex items-center justify-between"
+    >
+      <div>
+        <span
+          class="block text-[10px] uppercase font-semibold text-gray-400 tracking-wider"
+          >Ya Pagadas</span
+        >
+        <span class="text-xl font-serif font-bold text-[#6E7E75] mt-0.5 block"
+          >$5.89M</span
+        >
+      </div>
+      <div
+        class="w-9 h-9 rounded-lg bg-[#6E7E75]/10 flex items-center justify-center text-[#6E7E75]"
+      >
+        <i class="fa-solid fa-circle-check text-base"></i>
+      </div>
+    </div>
+    <div
+      class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs flex items-center justify-between"
+    >
+      <div>
+        <span
+          class="block text-[10px] uppercase font-semibold text-gray-400 tracking-wider"
+          >En Proceso</span
+        >
+        <span class="text-xl font-serif font-bold text-[#D4A373] mt-0.5 block"
+          >$1.42M</span
+        >
+      </div>
+      <div
+        class="w-9 h-9 rounded-lg bg-[#D4A373]/10 flex items-center justify-center text-[#D4A373]"
+      >
+        <i class="fa-solid fa-hourglass-half text-base"></i>
+      </div>
+    </div>
+    <div
+      class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs flex items-center justify-between"
+    >
+      <div>
+        <span
+          class="block text-[10px] uppercase font-semibold text-gray-400 tracking-wider"
+          >Por Cancelación</span
+        >
+        <span class="text-xl font-serif font-bold text-red-700 mt-0.5 block"
+          >$410.000</span
+        >
+      </div>
+      <div
+        class="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center text-red-600"
+      >
+        <i class="fa-solid fa-hand-holding-dollar text-base"></i>
+      </div>
+    </div>
+    <div
+      class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs flex items-center justify-between"
+    >
+      <div>
+        <span
+          class="block text-[10px] uppercase font-semibold text-gray-400 tracking-wider"
+          >Ocupación</span
+        >
+        <span class="text-xl font-serif font-bold text-[#1E2221] mt-0.5 block"
+          >84%</span
+        >
+      </div>
+      <div
+        class="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500"
+      >
+        <i class="fa-solid fa-chart-line text-base"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+    <div
+      class="bg-white p-5 rounded-xl border border-gray-100 shadow-xs lg:col-span-2"
+    >
+      <div
+        class="flex items-center justify-between mb-4 pb-2 border-b border-gray-100"
+      >
+        <h3
+          class="text-xs font-semibold uppercase tracking-wider text-[#1E2221]"
+        >
+          <i class="fa-solid fa-chart-bar text-[#2B4C59] mr-2"></i>Volumen de
+          Reservas por Mes
+        </h3>
+        <span class="text-[10px] text-gray-400">Año 2026</span>
+      </div>
+      <div class="w-full h-64">
+        <canvas id="chartReservas"></canvas>
+      </div>
+    </div>
+
+    <div
+      class="bg-white p-5 rounded-xl border border-gray-100 shadow-xs flex flex-col justify-between"
+    >
+      <div
+        class="flex items-center justify-between mb-3 pb-2 border-b border-gray-100"
+      >
+        <h3
+          class="text-xs font-semibold uppercase tracking-wider text-[#1E2221]"
+        >
+          <i class="fa-solid fa-circle-dot text-[#6E7E75] mr-2"></i>Estado de
+          Unidades (12)
+        </h3>
+      </div>
+      <div class="space-y-2.5 max-h-60 overflow-y-auto pr-1 scrollbar-hide">
+        <div
+          class="flex justify-between items-center p-2 bg-[#F7F5F0]/60 rounded-lg text-xs"
+        >
+          <span class="font-medium text-[#1E2221]">01. Master Suite Lobos</span>
+          <span
+            class="px-2 py-0.5 rounded text-[9px] bg-red-100 text-red-700 font-semibold uppercase"
+            >Ocupada</span
+          >
+        </div>
+        <div
+          class="flex justify-between items-center p-2 bg-[#F7F5F0]/60 rounded-lg text-xs"
+        >
+          <span class="font-medium text-[#1E2221]">02. Domo Terraza Mar</span>
+          <span
+            class="px-2 py-0.5 rounded text-[9px] bg-emerald-100 text-emerald-700 font-semibold uppercase"
+            >Disponible</span
+          >
+        </div>
+        <div
+          class="flex justify-between items-center p-2 bg-[#F7F5F0]/60 rounded-lg text-xs"
+        >
+          <span class="font-medium text-[#1E2221]"
+            >03. Cabaña Familiar Infiernillo</span
+          >
+          <span
+            class="px-2 py-0.5 rounded text-[9px] bg-emerald-100 text-emerald-700 font-semibold uppercase"
+            >Disponible</span
+          >
+        </div>
+        <div
+          class="flex justify-between items-center p-2 bg-[#F7F5F0]/60 rounded-lg text-xs"
+        >
+          <span class="font-medium text-[#1E2221]"
+            >04. Refugio del Escultor</span
+          >
+          <span
+            class="px-2 py-0.5 rounded text-[9px] bg-amber-100 text-amber-700 font-semibold uppercase"
+            >Bloqueo Man.</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="bg-white rounded-xl border border-gray-100 shadow-xs overflow-hidden mb-8"
+  >
+    <div class="p-5 border-b border-gray-100 bg-[#F7F5F0]/30">
+      <div
+        class="flex flex-col md:flex-row md:items-center justify-between gap-4"
+      >
+        <div>
+          <h3
+            class="text-xs font-semibold uppercase tracking-wider text-[#1E2221]"
+          >
+            <i class="fa-solid fa-calendar-days text-[#D4A373] mr-2"></i>Agenda
+            General de Reservas
+          </h3>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full md:w-auto text-xs"
+        >
+          <div>
+            <input
+              type="date"
+              title="Desde"
+              class="w-full p-2 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-white font-light text-gray-600"
+            />
+          </div>
+          <div>
+            <input
+              type="date"
+              title="Hasta"
+              class="w-full p-2 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-white font-light text-gray-600"
+            />
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Buscar..."
+              class="w-full p-2 pl-7 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-white font-light text-gray-600"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass absolute left-2.5 top-3 text-gray-300 text-[11px]"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr
+            class="bg-[#F7F5F0]/80 text-gray-500 font-medium uppercase tracking-wider border-b border-gray-100 text-[10px]"
+          >
+            <th class="p-4">Alojamiento</th>
+            <th class="p-4">Pasajero Principal</th>
+            <th class="p-4">Check-In</th>
+            <th class="p-4">Check-Out</th>
+            <th class="p-4">Origen</th>
+            <th class="p-4">Estado Pago</th>
+            <th class="p-4 text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 font-light text-gray-600">
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">Master Suite Lobos</td>
+            <td class="p-3.5">Carlos Mendoza Silva</td>
+            <td class="p-3.5">12 Jun 2026</td>
+            <td class="p-3.5">15 Jun 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-blue-50 text-blue-600 font-medium text-[9px]"
+                >Web</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span
+                class="inline-flex items-center text-emerald-600 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i>
+                Pagado</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">
+              Refugio del Escultor
+            </td>
+            <td class="p-3.5">Mantenimiento Técnico</td>
+            <td class="p-3.5">28 May 2026</td>
+            <td class="p-3.5">30 May 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-medium text-[9px]"
+                >Manual</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span class="inline-flex items-center text-gray-400 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i>
+                Bloqueado</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Liberar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">Domo Terraza Mar</td>
+            <td class="p-3.5">María José Prieto</td>
+            <td class="p-3.5">01 Jun 2026</td>
+            <td class="p-3.5">04 Jun 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-blue-50 text-blue-600 font-medium text-[9px]"
+                >Web</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span class="inline-flex items-center text-amber-500 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i> En
+                Proceso</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">
+              Cabaña Familiar Infiernillo
+            </td>
+            <td class="p-3.5">Andrés Balmaceda</td>
+            <td class="p-3.5">05 Jun 2026</td>
+            <td class="p-3.5">10 Jun 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-purple-50 text-purple-600 font-medium text-[9px]"
+                >WhatsApp</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span
+                class="inline-flex items-center text-emerald-600 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i>
+                Pagado</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">Suite Atardecer</td>
+            <td class="p-3.5">Francisca Walker M.</td>
+            <td class="p-3.5">18 Jun 2026</td>
+            <td class="p-3.5">20 Jun 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-blue-50 text-blue-600 font-medium text-[9px]"
+                >Web</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span
+                class="inline-flex items-center text-emerald-600 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i>
+                Pagado</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">Domo Geodésico Bio</td>
+            <td class="p-3.5">Roberto Cox</td>
+            <td class="p-3.5">22 Jun 2026</td>
+            <td class="p-3.5">25 Jun 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-blue-50 text-blue-600 font-medium text-[9px]"
+                >Web</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span class="inline-flex items-center text-amber-500 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i> En
+                Proceso</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">Cabaña Costa Negra</td>
+            <td class="p-3.5">Jorge Zabaleta</td>
+            <td class="p-3.5">02 Jul 2026</td>
+            <td class="p-3.5">07 Jul 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-medium text-[9px]"
+                >Manual</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span
+                class="inline-flex items-center text-emerald-600 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i>
+                Pagado</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-3.5 font-medium text-[#1E2221]">Loft El Mirador</td>
+            <td class="p-3.5">Diana Bolocco C.</td>
+            <td class="p-3.5">10 Jul 2026</td>
+            <td class="p-3.5">12 Jul 2026</td>
+            <td class="p-3.5">
+              <span
+                class="px-2 py-0.5 rounded bg-blue-50 text-blue-600 font-medium text-[9px]"
+                >Web</span
+              >
+            </td>
+            <td class="p-3.5">
+              <span
+                class="inline-flex items-center text-emerald-600 font-medium"
+                ><i class="fa-solid fa-circle text-[5px] mr-1.5"></i>
+                Pagado</span
+              >
+            </td>
+            <td class="p-3.5 text-center">
+              <button
+                class="text-[#2B4C59] hover:underline font-medium cursor-pointer"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div
+      class="p-4 bg-white border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-light"
+    >
+      <div>
+        Mostrando <span class="font-medium text-[#1E2221]">1-8</span> de
+        <span class="font-medium text-[#1E2221]">24</span> reservas activas
+      </div>
+      <div class="flex items-center space-x-1">
+        <button
+          title="Anterior"
+          class="px-2.5 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-gray-400 cursor-not-allowed"
+          disabled
+        >
+          <i class="fa-solid fa-chevron-left text-[10px]"></i>
+        </button>
+        <button class="px-3 py-1.5 bg-[#2B4C59] text-white rounded font-medium">
+          1
+        </button>
+        <button
+          class="px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-[#1E2221]"
+        >
+          2
+        </button>
+        <button
+          class="px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-[#1E2221]"
+        >
+          3
+        </button>
+        <button
+          title="Siguiente"
+          class="px-2.5 py-1.5 border border-gray-200 rounded hover:bg-gray-50 text-[#1E2221]"
+        >
+          <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="bg-white rounded-xl border border-gray-100 shadow-xs overflow-hidden"
+  >
+    <div
+      class="p-5 border-b border-gray-100 bg-red-50/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+    >
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-red-800">
+          <i class="fa-solid fa-rectangle-list text-red-500 mr-2"></i>Historial
+          de Cancelaciones e Impacto Financiero
+        </h3>
+        <p class="text-[11px] text-gray-400 font-light mt-0.5">
+          Audita las reservas anuladas. Si cancelaron con menos de 7 días, el
+          dinero te pertenece por completo.
+        </p>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr
+            class="bg-[#F7F5F0]/80 text-gray-500 font-medium uppercase tracking-wider border-b border-gray-100 text-[10px]"
+          >
+            <th class="p-4">Cód. Reserva</th>
+            <th class="p-4">Alojamiento</th>
+            <th class="p-4">Pasajero</th>
+            <th class="p-4">Monto Reserva</th>
+            <th class="p-4">Anticipación Anulación</th>
+            <th class="p-4">Resolución Financiera</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 font-light text-gray-600">
+          <tr class="hover:bg-gray-50/50 bg-red-50/5">
+            <td class="p-4 font-mono text-[#1E2221]">#LL-8841</td>
+            <td class="p-4 font-medium text-[#1E2221]">
+              Cabaña Familiar Infiernillo
+            </td>
+            <td class="p-4">Roberto Tobar Alarcón</td>
+            <td class="p-4 font-medium text-gray-900">$200.000</td>
+            <td class="p-4 text-red-600 font-medium">
+              <i class="fa-solid fa-clock mr-1"></i>3 días antes
+            </td>
+            <td class="p-4">
+              <span
+                class="px-2 py-0.5 text-[9px] bg-amber-100 text-amber-800 font-bold rounded uppercase tracking-wide"
+                >Liquidado al Anfitrión (100%)</span
+              >
+              <p class="text-[10px] text-gray-400 mt-1">
+                Recibes: <strong>$200.000</strong> debido al bloqueo tardío de
+                la cabaña.
+              </p>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50 bg-red-50/5">
+            <td class="p-4 font-mono text-[#1E2221]">#LL-8712</td>
+            <td class="p-4 font-medium text-[#1E2221]">Suite Atardecer</td>
+            <td class="p-4">Patricia Maldonado G.</td>
+            <td class="p-4 font-medium text-gray-900">$210.000</td>
+            <td class="p-4 text-red-600 font-medium">
+              <i class="fa-solid fa-clock mr-1"></i>24 horas antes
+            </td>
+            <td class="p-4">
+              <span
+                class="px-2 py-0.5 text-[9px] bg-amber-100 text-amber-800 font-bold rounded uppercase tracking-wide"
+                >Liquidado al Anfitrión (100%)</span
+              >
+              <p class="text-[10px] text-gray-400 mt-1">
+                Recibes: <strong>$210.000</strong> por anulación de última hora.
+              </p>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50/50">
+            <td class="p-4 font-mono text-[#1E2221]">#LL-9034</td>
+            <td class="p-4 font-medium text-[#1E2221]">Master Suite Lobos</td>
+            <td class="p-4">Mariana Lizana Vega</td>
+            <td class="p-4 font-medium text-gray-900">$300.000</td>
+            <td class="p-4 text-emerald-600 font-medium">
+              <i class="fa-solid fa-circle-check mr-1"></i>12 días antes
+            </td>
+            <td class="p-4">
+              <span
+                class="px-2 py-0.5 text-[9px] bg-gray-100 text-gray-500 font-medium rounded uppercase tracking-wide"
+                >Reembolsado al Cliente (90%)</span
+              >
+              <p class="text-[10px] text-gray-400 mt-1">
+                El cliente fue devuelto por anulación oportuna ($270.000
+                reajustados).
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
