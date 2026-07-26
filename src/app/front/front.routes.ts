@@ -5,10 +5,11 @@ import { EntornoComponent } from "./entorno/entorno.component";
 import { EventosComponent } from "./eventos/eventos.component";
 import { LegalComponent } from "./legal/legal.component";
 import { HospedajesComponent } from "./hospedajes/hospedajes.component";
+import { PublicLayoutComponent } from "../public-layout.component";
 
 export const FRONT_ROUTES: Routes = [
     { 
-        path: '', children: [
+        path: '', component: PublicLayoutComponent, children: [
             { path: 'inicio', component: FrontComponent },
             { path: '', redirectTo: 'inicio', pathMatch: 'full' },
             { path: 'hospedaje/:id', component: HospedajeComponent },
