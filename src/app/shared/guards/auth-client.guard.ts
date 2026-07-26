@@ -3,16 +3,16 @@ import { CanActivateFn, Router } from "@angular/router";
 import { map, catchError, of } from 'rxjs';
 import { ApiService } from "../services/api.service";
 
-export type TipoUsuario = 'admin' | 'anfitrion' | 'cliente';
+export type TipoUsuario = 'admin' | 'host' | 'client';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authClientGuard: CanActivateFn = (route, state) => {
   const auth = inject(ApiService);
   const router = inject(Router);
 
   return auth.getMe().pipe(
     map((user: any) => {
       if (!user) {
-        router.navigate(['/ingresar']);
+        router.navigate(['pasajero/login']);
         return false;
       }
 
@@ -33,7 +33,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     }),
 
     catchError(() => {
-      router.navigate(['/ingresar']);
+      router.navigate(['pasajero/login']);
       return of(false);
     }),
   );

@@ -1,0 +1,376 @@
+<div
+  class="w-full bg-gradient-to-b from-[#2B4C59] to-transparent bg-[length:100%_200px] bg-no-repeat"
+>
+  <main
+    class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 pt-24 md:pt-32 pb-12"
+  >
+    <nav class="text-xs text-gray-500 mb-6">
+      <a href="index.html" class="hover:text-[#D4A373]">Inicio</a> /
+      <span class="text-[#1E2221] font-medium">Registro de Anfitrión</span>
+    </nav>
+
+    <div class="mb-8">
+      <span
+        class="text-[10px] uppercase font-bold tracking-wider text-[#D4A373] bg-[#D4A373]/10 px-2.5 py-1 rounded"
+        >Comunidad</span
+      >
+      <h1
+        class="text-2xl md:text-3xl font-serif font-bold text-[#1E2221] mt-3 mb-2"
+      >
+        Únete como Arrendador
+      </h1>
+      <p class="text-xs md:text-sm text-gray-500 font-light">
+        Registra tus datos personales o de empresa para comenzar a publicar y
+        gestionar tus propiedades en nuestra plataforma.
+      </p>
+    </div>
+
+    <form class="space-y-6" [formGroup]="regForm" (ngSubmit)="registerHost()">
+      <section
+        class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs"
+      >
+        <div
+          class="flex items-center space-x-3 mb-5 pb-2 border-b border-gray-100"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59] text-xs font-bold"
+          >
+            1
+          </div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wider text-[#1E2221]"
+          >
+            Información de Identidad / Empresa
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Tipo de Arrendador</label
+            >
+            <div class="flex gap-4 mt-1">
+              <label
+                class="flex items-center text-xs font-light text-gray-700 cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="type"
+                  value="particular"
+                  checked
+                  class="accent-[#2B4C59] mr-2 h-4 w-4"
+                  formControlName="type"
+                />
+                Propietario Particular
+              </label>
+              <label
+                class="flex items-center text-xs font-light text-gray-700 cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="type"
+                  value="empresa"
+                  class="accent-[#2B4C59] mr-2 h-4 w-4"
+                  formControlName="type"
+                />
+                Empresa / Corredora / Administradora
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Nombre Completo o Razón Social</label
+            >
+            <input
+              type="text"
+              required
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="Ej: Inversiones Pichilemu SpA o Juan Pérez"
+              formControlName="name"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >RUT Comercial o RUT Personal</label
+            >
+            <input
+              type="text"
+              required
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="Ej: 76.543.210-K o 15.678.910-2"
+              formControlName="dni"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Nombre Comercial de Fantasía (Opcional)</label
+            >
+            <input
+              type="text"
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="Ej: Cabañas El Estero"
+              formControlName="fantasy"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Dirección Principal / Casa Matriz</label
+            >
+            <input
+              type="text"
+              required
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="Av. Comercio 1230, Oficina 4, Pichilemu"
+              formControlName="address"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs"
+      >
+        <div
+          class="flex items-center space-x-3 mb-5 pb-2 border-b border-gray-100"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59] text-xs font-bold"
+          >
+            2
+          </div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wider text-[#1E2221]"
+          >
+            Contacto y Credenciales de Acceso
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Correo Electrónico Comercial</label
+            >
+            <input
+              type="email"
+              required
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="contacto@tudominio.com"
+              formControlName="email"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Teléfono Móvil (Soporte / WhatsApp)</label
+            >
+            <input
+              type="tel"
+              required
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="+56 9 8765 4321"
+              formControlName="phone"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Contraseña</label
+            >
+            <div class="relative">
+              <input
+                id="reg-password"
+                type="password"
+                required
+                class="w-full text-xs font-light p-3 pr-10 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+                placeholder="Mínimo 8 caracteres"
+                formControlName="password"
+              />
+              <button
+                type="button"
+                class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-[#2B4C59] text-xs cursor-pointer toggle-btn"
+                data-target="reg-password"
+              >
+                <i class="fa-solid fa-eye eye-icon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Confirmar Contraseña</label
+            >
+            <div class="relative">
+              <input
+                id="reg-password-confirm"
+                type="password"
+                required
+                class="w-full text-xs font-light p-3 pr-10 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+                placeholder="Repite tu contraseña"
+                formControlName="password2"
+              />
+              <button
+                type="button"
+                class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-[#2B4C59] text-xs cursor-pointer toggle-btn"
+                data-target="reg-password-confirm"
+              >
+                <i class="fa-solid fa-eye eye-icon"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs"
+      >
+        <div
+          class="flex items-center space-x-3 mb-2 pb-2 border-b border-gray-100"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-[#2B4C59]/10 flex items-center justify-center text-[#2B4C59] text-xs font-bold"
+          >
+            3
+          </div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wider text-[#1E2221]"
+          >
+            Datos Bancarios para Liquidaciones
+          </h2>
+        </div>
+        <p class="text-[11px] text-gray-400 font-light mb-4">
+          Aquí transferiremos los montos correspondientes a las reservas
+          procesadas en la web.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Banco</label
+            >
+            <select
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-white"
+              formControlName="bank"
+            >
+              <option>Banco del Estado de Chile</option>
+              <option>Banco de Chile / Edwards</option>
+              <option>Banco Santander</option>
+              <option>BCI</option>
+              <option>Scotiabank</option>
+              <option>Banco Itaú</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Tipo de Cuenta</label
+            >
+            <select
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-white"
+              formControlName="typeAccount"
+            >
+              <option>Cuenta Corriente</option>
+              <option>Cuenta Vista / CuentaRut</option>
+              <option>Cuenta de Ahorro</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+              >Número de Cuenta</label
+            >
+            <input
+              type="text"
+              required
+              class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30"
+              placeholder="Ej: 1234567890"
+              formControlName="numberAccount"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs"
+      >
+        <div
+          class="flex items-center space-x-3 mb-2 pb-2 border-b border-gray-100"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-[#6E7E75]/20 flex items-center justify-center text-[#6E7E75] text-xs font-bold"
+          >
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h2
+            class="text-sm font-semibold uppercase tracking-wider text-[#1E2221]"
+          >
+            Documentación de Verificación
+          </h2>
+        </div>
+        <p class="text-[11px] text-gray-400 font-light mb-4">
+          Adjunta un documento que valide la identidad o existencia legal para
+          activar tu cuenta como anfitrión seguro.
+        </p>
+
+        <div
+          class="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center bg-[#F7F5F0]/20 hover:border-[#2B4C59] transition-colors relative"
+        >
+          <input
+            type="file"
+            required
+            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+          />
+          <i class="fa-solid fa-cloud-arrow-up text-2xl text-gray-400 mb-2"></i>
+          <span class="block text-xs font-medium text-[#1E2221]"
+            >Cargar Cédula de Identidad, E-RUT o Constitución de Sociedad</span
+          >
+          <span class="block text-[10px] text-gray-400 font-light mt-1"
+            >Formatos admitidos: PDF, JPG, PNG (Máx. 5MB)</span
+          >
+        </div>
+
+        <div class="mt-5 flex items-start">
+          <input
+            type="checkbox"
+            required
+            id="terms-arrendador"
+            class="accent-[#2B4C59] h-4 w-4 mt-0.5 rounded"
+          />
+          <label
+            for="terms-arrendador"
+            class="ml-2 text-[11px] text-gray-500 font-light leading-normal"
+          >
+            Acepto los términos de servicio para anfitriones, la comisión de la
+            plataforma por reserva completada y declaro que toda la información
+            legal y bancaria provista es fidedigna.
+          </label>
+        </div>
+      </section>
+
+      <div class="pt-2">
+        <button
+          type="submit"
+          class="w-full bg-[#2B4C59] text-white font-semibold py-4 rounded-xl text-sm tracking-wide shadow-md hover:bg-[#1A333D] transition-all text-center cursor-pointer"
+        >
+          <i class="fa-solid fa-user-plus mr-2 text-xs opacity-90"></i> Enviar
+          Solicitud de Registro
+        </button>
+      </div>
+    </form>
+  </main>
+</div>

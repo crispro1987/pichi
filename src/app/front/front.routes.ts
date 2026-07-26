@@ -5,7 +5,6 @@ import { EntornoComponent } from "./entorno/entorno.component";
 import { EventosComponent } from "./eventos/eventos.component";
 import { LegalComponent } from "./legal/legal.component";
 import { HospedajesComponent } from "./hospedajes/hospedajes.component";
-import { LoginHostComponent } from "./login-host/login-host.component";
 
 export const FRONT_ROUTES: Routes = [
     { 
@@ -17,7 +16,7 @@ export const FRONT_ROUTES: Routes = [
             { path: 'entorno', component: EntornoComponent },
             { path: 'eventos', component: EventosComponent },
             { path: 'legal', component: LegalComponent },
-            { path: 'login-anfitrion', component: LoginHostComponent },
+            
         ]
     }   
 ];

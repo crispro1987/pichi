@@ -20,7 +20,7 @@
         </p>
       </div>
 
-      <form class="space-y-4" action="#" method="POST">
+      <form class="space-y-4" [formGroup]="logForm" (ngSubmit)="loginHost()">
         <div>
           <label
             for="email"
@@ -41,6 +41,7 @@
               required
               class="w-full text-xs font-light pl-9 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30 text-[#2D3130]"
               placeholder="ejemplo@dominio.com"
+              formControlName="email"
             />
           </div>
         </div>
@@ -72,6 +73,7 @@
               required
               class="w-full text-xs font-light pl-9 pr-10 py-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59] bg-[#F7F5F0]/30 text-[#2D3130]"
               placeholder="••••••••"
+              formControlName="password"
             />
             <button
               type="button"
@@ -122,7 +124,7 @@
         <p class="text-xs text-gray-500 font-light">
           ¿Aún no tienes una cuenta de anfitrión?
           <a
-            href="registro-arrendador.html"
+            routerLink="/anfitrion/registro"
             class="block sm:inline font-semibold text-[#2B4C59] hover:underline mt-1 sm:mt-0"
             >Regístrate aquí</a
           >
