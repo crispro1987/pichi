@@ -1,0 +1,246 @@
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="mb-6">
+    <h1 class="text-2xl font-serif font-bold text-[#1E2221]">
+      Publicar Nueva Cabaña o Habitación
+    </h1>
+    <p class="text-xs text-gray-400 font-light mt-0.5">
+      Completa la ficha técnica, tarifas y equipamiento para listar tu propiedad
+      en el motor de reservas.
+    </p>
+  </div>
+
+  <form
+    class="space-y-6"
+    [formGroup]="accommForm"
+    (ngSubmit)="createAccommodation()"
+  >
+    <section
+      class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs space-y-4"
+    >
+      <h2
+        class="text-xs font-semibold uppercase tracking-wider text-[#1E2221] border-b border-gray-100 pb-2"
+      >
+        <i class="fa-solid fa-pen-to-square text-[#2B4C59] mr-2"></i>Información
+        Comercial
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2">
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Título Comercial del Alojamiento</label
+          >
+          <input
+            formControlName="title_accommodation"
+            type="text"
+            required
+            class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Ej: Domo Premium Vista Océano"
+          />
+        </div>
+        <div>
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Precio por Noche (CLP)</label
+          >
+          <input
+            formControlName="price_accommodation"
+            type="number"
+            required
+            class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Ej: 135000"
+          />
+        </div>
+        <div class="md:col-span-3">
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Descripción del Espacio</label
+          >
+          <textarea
+            formControlName="description_accommodation"
+            rows="4"
+            required
+            class="w-full text-xs font-light p-3 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Describe el estilo arquitectónico, las vistas, la privacidad y detalles atractivos para el cliente..."
+          ></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs space-y-4"
+    >
+      <h2
+        class="text-xs font-semibold uppercase tracking-wider text-[#1E2221] border-b border-gray-100 pb-2"
+      >
+        <i class="fa-solid fa-sliders text-[#D4A373] mr-2"></i>Capacidad e
+        Infraestructura
+      </h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+        <div>
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Huéspedes Máximos</label
+          >
+          <input
+            formControlName="guests_accommodation"
+            type="number"
+            min="1"
+            required
+            class="w-full p-2.5 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Ej: 4"
+          />
+        </div>
+        <div>
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Cantidad de Camas</label
+          >
+          <input
+            formControlName="beds_accommodation"
+            type="number"
+            min="1"
+            required
+            class="w-full p-2.5 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Ej: 2"
+          />
+        </div>
+        <div>
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Nº Baños Privados</label
+          >
+          <input
+            formControlName="bathrooms_accommodation"
+            type="number"
+            min="1"
+            required
+            class="w-full p-2.5 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Ej: 1"
+          />
+        </div>
+        <div>
+          <label
+            class="block text-[10px] font-medium text-gray-500 uppercase tracking-wider mb-1"
+            >Metros Cuadrados (m²)</label
+          >
+          <input
+            formControlName="squareMeters_accommodation"
+            type="number"
+            class="w-full p-2.5 border border-gray-200 rounded-lg focus:outline-[#2B4C59]"
+            placeholder="Ej: 45"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs space-y-4"
+    >
+      <h2
+        class="text-xs font-semibold uppercase tracking-wider text-[#1E2221] border-b border-gray-100 pb-2"
+      >
+        <i class="fa-solid fa-wifi text-[#6E7E75] mr-2"></i>Comodidades y
+        Servicios Disponibles
+      </h2>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-light text-gray-600"
+      >
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Wi-Fi Alta Velocidad
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Hot Tub / Tinaja Privada
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Estacionamiento Exclusivo
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Calefacción / Bosca
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Vista Directa al Mar
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Cocina Full Equipada
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" />
+          Terraza Privada
+        </label>
+        <label
+          class="flex items-center p-2.5 bg-[#F7F5F0]/40 border border-gray-100 rounded-lg cursor-pointer hover:bg-gray-50"
+        >
+          <input type="checkbox" class="accent-[#2B4C59] h-4 w-4 mr-2" /> TV
+          Satelital / Streaming
+        </label>
+      </div>
+    </section>
+
+    <section
+      class="bg-white p-5 md:p-6 rounded-xl border border-gray-100 shadow-xs space-y-4"
+    >
+      <h2
+        class="text-xs font-semibold uppercase tracking-wider text-[#1E2221] border-b border-gray-100 pb-2"
+      >
+        <i class="fa-solid fa-images text-[#1E2221] mr-2"></i>Galería
+        Fotográfica
+      </h2>
+
+      <div
+        class="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center bg-[#F7F5F0]/20 hover:border-[#2B4C59] transition-colors relative"
+      >
+        <input
+          type="file"
+          multiple
+          required
+          class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+        />
+        <i class="fa-solid fa-images text-3xl text-gray-300 mb-2"></i>
+        <span class="block text-xs font-medium text-[#1E2221]"
+          >Arrastra o selecciona las fotos de la cabaña</span
+        >
+        <span class="block text-[10px] text-gray-400 font-light mt-1"
+          >Se requiere al menos 3 imágenes de alta resolución (Resolución
+          sugerida: 16:10 o 16:9)</span
+        >
+      </div>
+    </section>
+
+    <div class="flex justify-end space-x-3 pt-2">
+      <a
+        href="dashboard-anfitrion.html"
+        class="bg-white border border-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl text-xs tracking-wide hover:bg-gray-50 transition-colors text-center"
+        >Cancelar</a
+      >
+      <button
+        type="submit"
+        class="bg-[#2B4C59] text-white font-semibold py-3 px-8 rounded-xl text-xs tracking-wide shadow-md hover:bg-[#1A333D] transition-colors cursor-pointer"
+      >
+        Publicar Unidad
+      </button>
+    </div>
+  </form>
+</main>

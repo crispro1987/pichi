@@ -21,6 +21,7 @@
         Bloqueo
       </button>
       <button
+        routerLink="/anfitrion/agregar-hospedaje"
         type="button"
         class="bg-white text-[#1E2221] border border-gray-200 text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-50 transition-all cursor-pointer"
       >
@@ -45,8 +46,9 @@
           class="block text-[10px] uppercase font-semibold text-gray-400 tracking-wider"
           >Cabañas</span
         >
-        <span class="text-xl font-serif font-bold text-[#1E2221] mt-0.5 block"
-          >12</span
+        <span
+          class="text-xl font-serif font-bold text-[#1E2221] mt-0.5 block"
+          >{{ accommodations.length }}</span
         >
       </div>
       <div
@@ -159,17 +161,32 @@
           class="text-xs font-semibold uppercase tracking-wider text-[#1E2221]"
         >
           <i class="fa-solid fa-circle-dot text-[#6E7E75] mr-2"></i>Estado de
-          Unidades (12)
+          Unidades ({{ accommodations.length }})
         </h3>
       </div>
       <div class="space-y-2.5 max-h-60 overflow-y-auto pr-1 scrollbar-hide">
         <div
           class="flex justify-between items-center p-2 bg-[#F7F5F0]/60 rounded-lg text-xs"
+          *ngFor="let accommodation of accommodations; let i = index"
         >
-          <span class="font-medium text-[#1E2221]">01. Master Suite Lobos</span>
+          <span class="font-medium text-[#1E2221]"
+            >{{ i + 1 }}.
+            {{ accommodation.title_accommodation | titlecase }}</span
+          >
           <span
+            *ngIf="accommodation.status_accommodation == 1"
+            class="px-2 py-0.5 rounded text-[9px] bg-emerald-100 text-emerald-700 font-semibold uppercase"
+            >Aprobada</span
+          >
+          <span
+            *ngIf="accommodation.status_accommodation == 2"
             class="px-2 py-0.5 rounded text-[9px] bg-red-100 text-red-700 font-semibold uppercase"
-            >Ocupada</span
+            >Bloqueada</span
+          >
+          <span
+            *ngIf="accommodation.status_accommodation == 0"
+            class="px-2 py-0.5 rounded text-[9px] bg-amber-100 text-amber-700 font-semibold uppercase"
+            >En revisión</span
           >
         </div>
         <div

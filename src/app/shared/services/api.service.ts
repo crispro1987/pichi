@@ -32,6 +32,49 @@ export class ApiService {
     );
   }
 
+  readAll(table:string){
+    return this.http.get(`${this.url}/${table}/all`, {
+      withCredentials: true
+    }).pipe(
+      map((resp:any) => {
+        if(!resp) return;
+        return resp;
+      } 
+    ));
+  }
+
+  readAllByHost(table:string){
+    return this.http.get(`${this.url}/${table}/mine`, {
+      withCredentials: true
+    }).pipe(
+      map((resp:any) => {
+        if(!resp) return;
+        return resp;
+      })
+    );
+  }
+
+  loginHost( host: HostsModel ){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    }); 
+
+    const payload = {
+        email_host: host.email_host,
+        password_host: host.password_host
+    };
+
+    return this.http.post(`${this.url}/auth/host/login`,payload,{headers:headers, withCredentials:true})
+      .pipe(
+        tap((resp: any) => {
+          
+        }),
+        map((resp:any) => {
+          return resp;
+        })
+      )
+  }
+
   createHost(host: HostsModel){
     const payload = {
       type_host: host.type_host,
@@ -56,26 +99,29 @@ export class ApiService {
     );
   }
 
-
-  loginHost( host: HostsModel ){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    }); 
-
+  createAccommodation(accommodation: any){
     const payload = {
-        email_host: host.email_host,
-        password_host: host.password_host
+      title_accommodation: accommodation.title_accommodation,
+      price_accommodation: accommodation.price_accommodation,
+      description_accommodation: accommodation.description_accommodation,
+      guests_accommodation: accommodation.guests_accommodation,
+      beds_accommodation: accommodation.beds_accommodation,
+      bathrooms_accommodation: accommodation.bathrooms_accommodation,
+      squareMeters_accommodation: accommodation.squareMeters_accommodation,
+      amenities: accommodation.amenities
     };
 
-    return this.http.post(`${this.url}/auth/host/login`,payload,{headers:headers, withCredentials:true})
-      .pipe(
-        tap((resp: any) => {
-          
-        }),
-        map((resp:any) => {
-          return resp;
-        })
-      )
+    return this.http.post(`${this.url}/accommodations/create-accommodation`, payload, {
+      withCredentials: true
+    })
+    .pipe(
+      map((resp:any) => {
+        if(!resp) return;
+        return resp;
+      })
+    );
   }
+
+  
 
 }
